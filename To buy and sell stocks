@@ -1,0 +1,27 @@
+//source code
+
+class buy_sell{
+    public static int stocks(int[] prices) {
+        int buy_price=Integer.MAX_VALUE;//track the min value of all days
+        int maxprofit=0;
+        for (int i=0;i<prices.length;i++){
+            if(buy_price<prices[i]){//profit
+                int profit=prices[i]-buy_price;//today's profit
+                maxprofit=Math.max(maxprofit,profit);//assinging maximum value from maxprofit & profit to maxprofit(var)
+
+
+            }
+            else {
+                buy_price=prices[i];
+            }
+        }
+    return maxprofit;}
+}
+
+
+public class Main {
+    public static void main(String[] args) {
+        int prices[]={7,1,5,3,6,4};
+
+        System.out.println(buy_sell.stocks(prices));
+    }
