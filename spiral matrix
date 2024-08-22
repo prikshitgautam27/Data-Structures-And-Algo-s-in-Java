@@ -1,0 +1,71 @@
+//spiral matrix
+
+class spiral{
+    public static void matrix(int[][] mat) {
+        if (mat.length == 0 || mat[0].length == 0) {
+            System.out.println("Empty matrix or matrix with a single column.");
+            return;
+        }
+int startRow=0;
+int start_col=0;
+int endRow=mat.length-1;
+int end_Col=mat[0].length-1;
+
+while(startRow<=endRow  && start_col<=end_Col){
+    //for top extraxtion of elements
+    for(int j=start_col;j<=end_Col;j++){
+        if(startRow==endRow){
+            break;
+        }
+        System.out.print(mat[startRow][j]+" ");
+    }
+    //for right
+    for(int i=startRow+1;i<=endRow;i++){
+        if(startRow==endRow){
+            break;
+        }
+        System .out.print(mat[i][end_Col]+" ");
+    }
+    //for bottom
+    for(int j=end_Col-1;j>=start_col;j--){
+        if(start_col==end_Col){
+            break;
+        }
+        System.out.print(mat[endRow][j]+" ");
+    }
+
+//for left
+    for(int i=endRow-1;i>=startRow+1;i--){
+        if(start_col==end_Col){
+            break;
+        }
+        System.out.print(mat[i][start_col]+" ");
+    }
+
+start_col++;
+    startRow++;
+    endRow--;
+    end_Col--;
+
+}
+
+
+        System.out.println();   }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        int matrix[][]={
+                {1,2,3,4},
+                {5,6,7,8},
+                {9,10,11,12},
+                {13,14,15,16}
+        };
+       spiral.matrix(matrix);
+
+
+return ;
+
+    }
+}
+
